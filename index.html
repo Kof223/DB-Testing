@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="process.js"></script>
+  </head>
+  <body>
+    <h1>Database Webpage</h1>
+
+    <p>
+      <b>Create Person:</b><br>
+      <label for="cName">Name:</label>
+      <input type="text" id="cName" name="cName"><br>
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age"><br>
+      <input type="button" value="Create" onclick="httpCreate(cName.value, age.value)">
+    </p>
+
+    <p>
+      <label for="dName"><b>Delete Person in Database:</b></label><br>
+      <input type="text" id="dName" name="dName">
+      <input type="button" value="DELETE" onclick="httpDelete(dName.value)">
+    </p>
+
+    <p>
+      <label for="fName"><b>Find in Database:</b></label><br>
+      <input type="text" id="fName" name="fName">
+      <input type="button" value="Find" onclick="httpFind(fName.value)">
+    </p>
+
+    <p>
+      View All in database: 
+      <!-- This is an alternate method that takes to the page -->
+      <!-- <form action="/index.php/data" method="GET">
+        <input type="submit" value="View">
+      </form> -->
+      <input type="button" value="View" onclick="httpGet()">
+    </p>
+
+    <p id="result"></p>
+  </body>
+</html>
