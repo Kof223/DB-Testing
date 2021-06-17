@@ -1,6 +1,6 @@
 <?php
 
-//include "SQLController.php";
+include "Gateway.php";
 include "SQLGateway.php";
 include "Controller.php";
 
@@ -25,5 +25,5 @@ if (isset($uri[3])) {
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 // pass the request method and user ID to the PersonController and process the HTTP request:
-$control = new Controller($requestMethod, $name, false);
+$control = new Controller($requestMethod, $name, true);
 $control->processRequest();

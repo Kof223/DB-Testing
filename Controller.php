@@ -14,7 +14,7 @@ class Controller {
     {
         if ($isSQLITE) {
             $this->db = new SQLite3('./db/test.db', SQLITE3_OPEN_READWRITE);
-            $this->gateway = new Gateway($this->conn);
+            $this->gateway = new Gateway($this->db);
         } else {
             $serverName = "localhost";
             $connectionOptions = array(
