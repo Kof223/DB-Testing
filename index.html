@@ -26,68 +26,51 @@
       <div class="row">
         <div class="rounded border border-3 m-2 col">
           <h3>Create New Person</h3>
-          <div class="row">
+          <form
+            class="row"
+            onsubmit="httpCreate(cName.value, age.value); return false"
+          >
             <div class="col">
               <label for="cName" class="form-label">Name</label>
-              <input type="text" id="cName" class="form-control" />
+              <input type="text" id="cName" class="form-control" required />
             </div>
             <div class="col">
               <label for="age" class="form-label">Age</label>
-              <input type="text" id="age" class="form-control" />
+              <input type="text" id="age" class="form-control" required />
             </div>
-          </div>
-          <div class="d-flex justify-content-center">
-            <input
-              type="button"
-              class="m-2 btn btn-primary"
-              value="Create"
-              onclick="httpCreate(cName.value, age.value)"
-            />
-          </div>
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="m-2 btn btn-primary">Create</button>
+            </div>
+          </form>
         </div>
 
         <div class="rounded border border-3 m-2 col">
           <h3>Delete a Person</h3>
-          <label for="dName" class="form-label">Name to Delete</label>
-          <input type="text" id="dName" class="form-control" />
-          <div class="d-flex justify-content-center">
-            <input
-              type="button"
-              class="m-2 btn btn-primary"
-              value="Delete"
-              onclick="httpDelete(dName.value)"
-            />
-          </div>
+          <form onsubmit="httpDelete(dName.value); return false">
+            <label for="dName" class="form-label">Name to Delete</label>
+            <input type="text" id="dName" class="form-control" required />
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="m-2 btn btn-primary">Delete</button>
+            </div>
+          </form>
         </div>
 
         <div class="rounded border border-3 m-2 col">
           <h3>Find a Person</h3>
-          <label for="fName" class="form-label">Name to Find</label>
-          <input type="text" id="fName" class="form-control" />
-          <div class="d-flex justify-content-center">
-            <input
-              type="button"
-              class="m-2 btn btn-primary"
-              value="Find"
-              onclick="httpFind(fName.value)"
-            />
-          </div>
+          <form onsubmit="httpFind(fName.value); return false">
+            <label for="fName" class="form-label">Name to Find</label>
+            <input type="text" id="fName" class="form-control" required />
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="m-2 btn btn-primary">Find</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
     <div class="border border-2 p-2 bg-white text-center container-fluid">
       <h3>View All in database:</h3>
-      <!-- This is an alternate method that takes to the page -->
-      <!-- <form action="/index.php/data" method="GET">
-        <input type="submit" value="View">
-      </form> -->
-      <input
-        type="button"
-        class="m-2 btn btn-primary"
-        value="View"
-        onclick="httpGet()"
-      />
+      <button type="button" class="m-2 btn btn-primary" onclick="httpGet()">View</button>
     </div>
 
     <div class="p-4 text-center container">
